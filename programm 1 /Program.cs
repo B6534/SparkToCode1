@@ -53,9 +53,10 @@ class Program
         {
             Console.WriteLine("YOU pass ");
         }
-/////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////12
+/// 
         Console.WriteLine("Welcome to main menu:");
-        Console.WriteLine("1.Deposite");
+        Console.WriteLine("1.Deposited");
         Console.WriteLine("2.withdraw");
         Console.WriteLine("3.blance chack ");
         
