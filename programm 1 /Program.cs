@@ -4,20 +4,20 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Console.WriteLine("Hello, SparkToCode!");
-        //
-        // Console.WriteLine("Please enter your Name: ");
-        // string userName =  Console.ReadLine();
-        //
-        // Console.Write("Enter your Age: ");
-        // int uaerage = int.Parse(Console.ReadLine());
-        //
-        // Console.WriteLine("Please enter your salary: ");
-        // float usersalary = float.Parse(Console.ReadLine());
-        //
-        // Console.WriteLine("hello "+userName);
-        // Console.WriteLine("You are "+uaerage);
-        // Console.WriteLine("Your salary: "+usersalary);
+        Console.WriteLine("Hello, SparkToCode!");
+        
+        Console.WriteLine("Please enter your Name: ");
+        string userName =  Console.ReadLine();
+        
+        Console.Write("Enter your Age: ");
+        int uaerage = int.Parse(Console.ReadLine());
+        
+        Console.WriteLine("Please enter your salary: ");
+        float usersalary = float.Parse(Console.ReadLine());
+        
+        Console.WriteLine("hello "+userName);
+        Console.WriteLine("You are "+uaerage);
+        Console.WriteLine("Your salary: "+usersalary);
         
         Console.WriteLine("Enter first Number: ");
         float firstNumber = float.Parse(Console.ReadLine());
