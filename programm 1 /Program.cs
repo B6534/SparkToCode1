@@ -76,31 +76,66 @@
          // } while ( guess != secnumber);
          
          //// task 6  //////
-         
-          
-          
-           try
+           // try
+           // {
+           //     Console.WriteLine("Enter first number:");
+           //     int firstNumber = int.Parse(Console.ReadLine());
+           //     
+           //     Console.WriteLine("Enter second number:");
+           //     int secondNumber = int.Parse(Console.ReadLine());
+           //     
+           //     float division = firstNumber / secondNumber; 
+           //     Console.WriteLine("The division is: " + division);
+           // }
+           // catch (DivideByZeroException)
+           // {
+           //     Console.WriteLine("Error: you cannot divide by zero");
+           //     
+           // }
+           // catch (FormatException)
+           // {
+           //     Console.WriteLine("Error: valid number.");
+           // }
+           
+           //// task 7 ///
+           
+           bool exit = false;
+           while (exit)
            {
-               Console.WriteLine("Enter first number:");
-               int firstNumber = int.Parse(Console.ReadLine());
-               
-               Console.WriteLine("Enter second number:");
-               int secondNumber = int.Parse(Console.ReadLine());
-               
-               float division = firstNumber / secondNumber; 
-               Console.WriteLine("The division is: " + division);
+               Console.WriteLine("menu-driven program");
+               Console.WriteLine("1) say hello ");
+               Console.WriteLine("2) show current Time of day");
+               Console.WriteLine("3) exit");
+               try 
+               {
+                   int choice = int.Parse(Console.ReadLine());
+                   switch  (choice)
+                   {
+                       case 1:
+                           Console.WriteLine("Hello");
+                           break;
+                       case 2:
+                           Console.WriteLine("Good morning");
+                           break;
+                       case 3:
+                           Console.WriteLine("Exit");
+                           exit = true;
+                           break;
+                       default:
+                           Console.WriteLine(" Error: Not a valid option");
+                           break;
+                   }
+               }
+               catch (FormatException)
+               {
+                   Console.WriteLine(" Error: Not a valid option");
+               }
            }
-           catch (DivideByZeroException)
-           {
-               Console.WriteLine("Error: you cannot divide by zero");
-               
-           }
-           catch (FormatException)
-           {
-               Console.WriteLine("Error: valid number.");
-           }
+           
 
-
+           
+               
+           
 
 
 
