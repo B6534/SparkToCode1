@@ -52,29 +52,54 @@
          // Console.WriteLine("Access Granted ");
          
          ////// tssk 5 ////
-         int secnumber = 42;
-         int guess = 0;
-         int attempts = 0;
-         Console.WriteLine("Guess the secret number");
-         do
-         {
-             Console.WriteLine("Enter you Guess: ");
-             guess = int.Parse(Console.ReadLine());
-             attempts++;
-             if (guess > secnumber)
-             {
-                 Console.WriteLine("Too high");
-             }
-             else if (guess < secnumber) 
-             {
-                 Console.WriteLine("Too low");
-             }
-             else
-             {
-                 Console.WriteLine("Correct it took you "+attempts);
-             }
-         } while ( guess != secnumber);
+         // int secnumber = 42;
+         // int guess = 0;
+         // int attempts = 0;
+         // Console.WriteLine("Guess the secret number");
+         // do
+         // {
+         //     Console.WriteLine("Enter you Guess: ");
+         //     guess = int.Parse(Console.ReadLine());
+         //     attempts++;
+         //     if (guess > secnumber)
+         //     {
+         //         Console.WriteLine("Too high");
+         //     }
+         //     else if (guess < secnumber) 
+         //     {
+         //         Console.WriteLine("Too low");
+         //     }
+         //     else
+         //     {
+         //         Console.WriteLine("Correct it took you "+attempts);
+         //     }
+         // } while ( guess != secnumber);
          
+         //// task 6  //////
+         
+          
+          
+           try
+           {
+               Console.WriteLine("Enter first number:");
+               int firstNumber = int.Parse(Console.ReadLine());
+               
+               Console.WriteLine("Enter second number:");
+               int secondNumber = int.Parse(Console.ReadLine());
+               
+               float division = firstNumber / secondNumber; 
+               Console.WriteLine("The division is: " + division);
+           }
+           catch (DivideByZeroException)
+           {
+               Console.WriteLine("Error: you cannot divide by zero");
+               
+           }
+           catch (FormatException)
+           {
+               Console.WriteLine("Error: valid number.");
+           }
+
 
 
 
