@@ -99,38 +99,54 @@
            
            //// task 7 ///
            
-           bool exit = false;
-           while (exit)
+           // bool exit = false;
+           // while (exit)
+           // {
+           //     Console.WriteLine("menu-driven program");
+           //     Console.WriteLine("1) say hello ");
+           //     Console.WriteLine("2) show current Time of day");
+           //     Console.WriteLine("3) exit");
+           //     try 
+           //     {
+           //         int choice = int.Parse(Console.ReadLine());
+           //         switch  (choice)
+           //         {
+           //             case 1:
+           //                 Console.WriteLine("Hello");
+           //                 break;
+           //             case 2:
+           //                 Console.WriteLine("Good morning");
+           //                 break;
+           //             case 3:
+           //                 Console.WriteLine("Exit");
+           //                 exit = true;
+           //                 break;
+           //             default:
+           //                 Console.WriteLine(" Error: Not a valid option");
+           //                 break;
+           //         }
+           //     }
+           //     catch (FormatException)
+           //     {
+           //         Console.WriteLine(" Error: Not a valid option");
+           //     }
+           // }
+           
+           ///// task 8 ////
+           
+           Console.WriteLine("Enter number");
+           int n= int.Parse(Console.ReadLine());
+           float sum=0;
+           for (int i= 1 ;  i <= n; i++)
            {
-               Console.WriteLine("menu-driven program");
-               Console.WriteLine("1) say hello ");
-               Console.WriteLine("2) show current Time of day");
-               Console.WriteLine("3) exit");
-               try 
+               if (i % 2 == 0)
                {
-                   int choice = int.Parse(Console.ReadLine());
-                   switch  (choice)
-                   {
-                       case 1:
-                           Console.WriteLine("Hello");
-                           break;
-                       case 2:
-                           Console.WriteLine("Good morning");
-                           break;
-                       case 3:
-                           Console.WriteLine("Exit");
-                           exit = true;
-                           break;
-                       default:
-                           Console.WriteLine(" Error: Not a valid option");
-                           break;
-                   }
+                   sum+=i;
+                   
                }
-               catch (FormatException)
-               {
-                   Console.WriteLine(" Error: Not a valid option");
-               }
+              
            }
+           Console.WriteLine("the sum is :" + sum);
            
 
            
