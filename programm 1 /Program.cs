@@ -134,19 +134,43 @@
            
            ///// task 8 ////
            
-           Console.WriteLine("Enter number");
-           int n= int.Parse(Console.ReadLine());
-           float sum=0;
-           for (int i= 1 ;  i <= n; i++)
+           // Console.WriteLine("Enter number");
+           // int n= int.Parse(Console.ReadLine());
+           // float sum=0;
+           // for (int i= 1 ;  i <= n; i++)
+           // {
+           //     if (i % 2 == 0)
+           //     {
+           //         sum+=i;
+           //         
+           //     }
+           //    
+           // }
+           // Console.WriteLine("the sum is :" + sum);
+           
+           ///// task 9 ///
+           
+           bool valid= false;
+           int number = 0;
+           do 
            {
-               if (i % 2 == 0)
+               try
                {
-                   sum+=i;
+                   Console.Write("Enter a number: ");
+                   number = int.Parse(Console.ReadLine());
                    
+                    if (number > 0)
+                    {
+                        valid = true;
+                    }
                }
-              
-           }
-           Console.WriteLine("the sum is :" + sum);
+               catch (Exception )
+               {
+                   Console.WriteLine("error");
+                   
+               }    
+           } while(!valid);
+           
            
 
            
