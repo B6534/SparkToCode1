@@ -1,84 +1,28 @@
-﻿namespace programm_1;
+﻿using System;
+
+namespace programm_1;
 
 class Program
 {
     static void Main(string[] args)
     {
-        // Console.WriteLine("Hello, SparkToCode!");
-        //
-        // Console.WriteLine("Please enter your Name: ");
-        // string userName =  Console.ReadLine();
-        //
-        // Console.Write("Enter your Age: ");
-        // int uaerage = int.Parse(Console.ReadLine());
-        //
-        // Console.WriteLine("Please enter your salary: ");
-        // float usersalary = float.Parse(Console.ReadLine());
-        //
-        // Console.WriteLine("hello "+userName);
-        // Console.WriteLine("You are "+uaerage);
-        // Console.WriteLine("Your salary: "+usersalary);
-        
-        Console.WriteLine("Enter first Number: ");
-        float firstNumber = float.Parse(Console.ReadLine());
-        
-        Console.WriteLine("Enter second Number: ");
-        float secondNumber = float.Parse(Console.ReadLine());
-        
-        float addresult = firstNumber + secondNumber;
-        Console.WriteLine("Addtion:" + addresult);
-        
-        float Subtractresult = firstNumber - secondNumber;
-        Console.WriteLine("Subtract: " + Subtractresult);
-
-        float Multiplicationresult = firstNumber * secondNumber;
-        Console.WriteLine("Multiplication: " + Multiplicationresult);
-        
-        float Divisionresult = firstNumber / secondNumber;
-        Console.WriteLine("Division:" + Divisionresult);
-        
-        // and &&
-        // or ||
-        // not ! 
-
-        Console.WriteLine("Enter First digree: ");
-        float digree = float.Parse(Console.ReadLine());
-
-        if (digree < 50)
+        /// task 1 ////
+        try
         {
-            Console.WriteLine("YOU failed ");
+            Console.WriteLine("Enter first number:");
+            float firstNumber = float.Parse(Console.ReadLine());
+            
+            Console.WriteLine("Enter second number:");
+            float secondNumber = float.Parse(Console.ReadLine());
+            
+            double result = Math.Abs(secondNumber - firstNumber);
+            Console.WriteLine(result);
         }
-        else if (digree > 50 && digree < 100) ;
-
+        catch (Exception )
         {
-            Console.WriteLine("YOU pass ");
+            Console.WriteLine("error: please type valid number only ");
         }
-////////////////////////////////////////////////////////////////////12
-/// 
-        Console.WriteLine("Welcome to main menu:");
-        Console.WriteLine("1.Deposited");
-        Console.WriteLine("2.withdraw");
-        Console.WriteLine("3.blance chack ");
-        
-        Console.WriteLine("please choose an option: ");
-        int option = int.Parse(Console.ReadLine());
-
-        switch (option)
-        {
-            case 1: 
-                Console.WriteLine("deposited");
-                break;
-            case 2:
-                Console.WriteLine("withdraw");
-                break;
-            case 3:
-                Console.WriteLine("divided");
-                break;
-            default:
-                Console.WriteLine("Not a valid option");
-                break;
-        }
+    }
         
 
     }
-}
