@@ -102,33 +102,39 @@ class Program
         
         // task 8 // 
         
-        Console.WriteLine("Enter membership start date (yyyy-MM-dd) ");
-        string itstartDate = Console.ReadLine();
-        Console.WriteLine("Enter the number of valid memberships days: ");
-        int days = int.Parse(Console.ReadLine());
-        if (DateTime.TryParse(itstartDate, out DateTime startDate))
-        {
-            DateTime expireDate = startDate.AddDays(days);
-            if (expireDate >= DateTime.Today)
-            {
-                Console.WriteLine("Active membership");
-            }
-            else
-            {
-                Console.WriteLine("Inactive membership");
-            }
-            Console.WriteLine("Expiry Date: " + expireDate.ToString("yyyy-MM-dd"));
-        }
-        else
-        {
-            Console.WriteLine("Invalid date format. Please use yyyy-mm-dd.");
-        }
-            
-
-
-
-
-
+        // Console.WriteLine("Enter membership start date (yyyy-MM-dd) ");
+        // string itstartDate = Console.ReadLine();
+        // Console.WriteLine("Enter the number of valid memberships days: ");
+        // int days = int.Parse(Console.ReadLine());
+        // if (DateTime.TryParse(itstartDate, out DateTime startDate))
+        // {
+        //     DateTime expireDate = startDate.AddDays(days);
+        //     if (expireDate >= DateTime.Today)
+        //     {
+        //         Console.WriteLine("Active membership");
+        //     }
+        //     else
+        //     {
+        //         Console.WriteLine("Inactive membership");
+        //     }
+        //     Console.WriteLine("Expiry Date: " + expireDate.ToString("yyyy-MM-dd"));
+        // }
+        // else
+        // {
+        //     Console.WriteLine("Invalid date format. Please use yyyy-mm-dd.");
+        // }
+        
+        // Task 9 //
+        Console.WriteLine("Enter decimal number");
+        double number = double.Parse(Console.ReadLine());
+        double nearst = Math.Round(number);
+        double roundup = Math.Ceiling(nearst);
+        double rounddown = Math.Floor(nearst);
+        Console.WriteLine("Number: " + number);
+        Console.WriteLine("Round to nearst: " + nearst);
+        Console.WriteLine("Round up: " + roundup);
+        Console.WriteLine("Round down: " + rounddown);
+        
 
     }
         
