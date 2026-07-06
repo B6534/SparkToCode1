@@ -125,16 +125,35 @@ class Program
         // }
         
         // Task 9 //
-        Console.WriteLine("Enter decimal number");
-        double number = double.Parse(Console.ReadLine());
-        double nearst = Math.Round(number);
-        double roundup = Math.Ceiling(nearst);
-        double rounddown = Math.Floor(nearst);
-        Console.WriteLine("Number: " + number);
-        Console.WriteLine("Round to nearst: " + nearst);
-        Console.WriteLine("Round up: " + roundup);
-        Console.WriteLine("Round down: " + rounddown);
+        // Console.WriteLine("Enter decimal number");
+        // double number = double.Parse(Console.ReadLine());
+        // double nearst = Math.Round(number);
+        // double roundup = Math.Ceiling(nearst);
+        // double rounddown = Math.Floor(nearst);
+        // Console.WriteLine("Number: " + number);
+        // Console.WriteLine("Round to nearst: " + nearst);
+        // Console.WriteLine("Round up: " + roundup);
+        // Console.WriteLine("Round down: " + rounddown);
+       
+        // Task 10 // 
         
+        Console.WriteLine("Ener full sentence: ");
+        string sentence = Console.ReadLine();
+        Console.WriteLine("Enter word to search for: ");
+        string word = Console.ReadLine();
+        
+        int firstindex = sentence.IndexOf(word);
+        int secondindex = sentence.LastIndexOf(word);
+        if (firstindex == -1)
+        {
+            Console.WriteLine("The word '" + word + "' was not found in the sentence.");
+            
+        }
+        else
+        {
+            Console.WriteLine("First position: " + firstindex);
+            Console.WriteLine("Second position: " + secondindex);
+        }
 
     }
         
