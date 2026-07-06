@@ -70,18 +70,34 @@ class Program
         // }
         
         // task 6 // 
-        Console.WriteLine("Enter your password:");
-        string password = Console.ReadLine();
-        bool longpassword = password.Length >= 8;
-        bool notforbidden = !password.ToLower().Contains("password");
-
-        if (longpassword && notforbidden)
+        // Console.WriteLine("Enter your password:");
+        // string password = Console.ReadLine();
+        // bool longpassword = password.Length >= 8;
+        // bool notforbidden = !password.ToLower().Contains("password");
+        //
+        // if (longpassword && notforbidden)
+        // {
+        //     Console.WriteLine("Strong: Your password is valid.");
+        // }
+        // else
+        // {
+        //     Console.WriteLine("Weak: Password must be at least 8 characters.");
+        // }
+        
+        // Task 7 //
+        Console.WriteLine("Enter your first name");
+        string fName = Console.ReadLine();
+        Console.WriteLine("Enter your socond name");
+        string sName = Console.ReadLine();
+        string cleanname = fName.Trim().ToLower();
+        string cleanname2 = sName.Trim().ToLower();
+        if (cleanname == cleanname2)
         {
-            Console.WriteLine("Strong: Your password is valid.");
+            Console.WriteLine("Match name");
         }
         else
         {
-            Console.WriteLine("Weak: Password must be at least 8 characters.");
+            Console.WriteLine("No match name");
         }
             
         
