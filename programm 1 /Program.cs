@@ -137,22 +137,52 @@ class Program
        
         // Task 10 // 
         
-        Console.WriteLine("Ener full sentence: ");
-        string sentence = Console.ReadLine();
-        Console.WriteLine("Enter word to search for: ");
-        string word = Console.ReadLine();
+        // Console.WriteLine("Ener full sentence: ");
+        // string sentence = Console.ReadLine();
+        // Console.WriteLine("Enter word to search for: ");
+        // string word = Console.ReadLine();
+        //
+        // int firstindex = sentence.IndexOf(word);
+        // int secondindex = sentence.LastIndexOf(word);
+        // if (firstindex == -1)
+        // {
+        //     Console.WriteLine("The word '" + word + "' was not found in the sentence.");
+        //     
+        // }
+        // else
+        // {
+        //     Console.WriteLine("First position: " + firstindex);
+        //     Console.WriteLine("Second position: " + secondindex);
+        // }
         
-        int firstindex = sentence.IndexOf(word);
-        int secondindex = sentence.LastIndexOf(word);
-        if (firstindex == -1)
+        // Task 11 // 
+        Random rnd = new Random();
+        int otp = rnd.Next(1000, 10000);
+        Console.WriteLine("Your OTP is: " + otp);
+        Console.Write("Please enter the code : ");
+        bool isvervalid =  false;
+        for (int i=1 ; i>=3 ; i++)
         {
-            Console.WriteLine("The word '" + word + "' was not found in the sentence.");
+            try
+            {
+              int input = int.Parse(Console.ReadLine());
+              if (input == otp)
+              {
+                  
+                  Console.WriteLine("Verified "); 
+                  isvervalid = true;
+                  break;
+              }
+              else
+              {
+                  Console.WriteLine("Invalid : incorrect code");
+              }
+            }
             
-        }
-        else
-        {
-            Console.WriteLine("First position: " + firstindex);
-            Console.WriteLine("Second position: " + secondindex);
+            catch (Exception )
+            {
+                Console.WriteLine("invalid input please enter nunbers only");
+            }
         }
 
     }
