@@ -54,19 +54,34 @@ class Program
         
         // Task 5 //
         
-        Console.WriteLine("Enter your raw exam score:");
-        double score = double.Parse(Console.ReadLine());
-        double score2 = Math.Round(score , 0);
-        if (score2 >= 60)
+        // Console.WriteLine("Enter your raw exam score:");
+        // double score = double.Parse(Console.ReadLine());
+        // double score2 = Math.Round(score , 0);
+        // if (score2 >= 60)
+        // {
+        //     Console.WriteLine("Round score: " + score2);
+        //     Console.WriteLine("Pass");
+        //     
+        // }
+        // else  
+        // {
+        //     Console.WriteLine("Round score: " + score2);
+        //     Console.WriteLine("Fail");
+        // }
+        
+        // task 6 // 
+        Console.WriteLine("Enter your password:");
+        string password = Console.ReadLine();
+        bool longpassword = password.Length >= 8;
+        bool notforbidden = !password.ToLower().Contains("password");
+
+        if (longpassword && notforbidden)
         {
-            Console.WriteLine("Round score: " + score2);
-            Console.WriteLine("Pass");
-            
+            Console.WriteLine("Strong: Your password is valid.");
         }
-        else  
+        else
         {
-            Console.WriteLine("Round score: " + score2);
-            Console.WriteLine("Fail");
+            Console.WriteLine("Weak: Password must be at least 8 characters.");
         }
             
         
