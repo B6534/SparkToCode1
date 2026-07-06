@@ -85,22 +85,50 @@ class Program
         // }
         
         // Task 7 //
-        Console.WriteLine("Enter your first name");
-        string fName = Console.ReadLine();
-        Console.WriteLine("Enter your socond name");
-        string sName = Console.ReadLine();
-        string cleanname = fName.Trim().ToLower();
-        string cleanname2 = sName.Trim().ToLower();
-        if (cleanname == cleanname2)
+        // Console.WriteLine("Enter your first name");
+        // string fName = Console.ReadLine();
+        // Console.WriteLine("Enter your socond name");
+        // string sName = Console.ReadLine();
+        // string cleanname = fName.Trim().ToLower();
+        // string cleanname2 = sName.Trim().ToLower();
+        // if (cleanname == cleanname2)
+        // {
+        //     Console.WriteLine("Match name");
+        // }
+        // else
+        // {
+        //     Console.WriteLine("No match name");
+        // }
+        
+        // task 8 // 
+        
+        Console.WriteLine("Enter membership start date (yyyy-MM-dd) ");
+        string itstartDate = Console.ReadLine();
+        Console.WriteLine("Enter the number of valid memberships days: ");
+        int days = int.Parse(Console.ReadLine());
+        if (DateTime.TryParse(itstartDate, out DateTime startDate))
         {
-            Console.WriteLine("Match name");
+            DateTime expireDate = startDate.AddDays(days);
+            if (expireDate >= DateTime.Today)
+            {
+                Console.WriteLine("Active membership");
+            }
+            else
+            {
+                Console.WriteLine("Inactive membership");
+            }
+            Console.WriteLine("Expiry Date: " + expireDate.ToString("yyyy-MM-dd"));
         }
         else
         {
-            Console.WriteLine("No match name");
+            Console.WriteLine("Invalid date format. Please use yyyy-mm-dd.");
         }
             
-        
+
+
+
+
+
 
     }
         
