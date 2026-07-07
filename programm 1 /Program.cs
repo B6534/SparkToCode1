@@ -4,13 +4,13 @@ namespace programm_1;
 
 class Program
 {
-    /// Function task 1 //// 
+    ///// Function task 1 //// 
     // public static void PrintWlecome(string name)
     // {
     //     Console.WriteLine("Welcome " + name );
     // }
 
-    // function task 2 //
+    //// function task 2 //
     // public static int square(int n)
     // {
     //     int sequarev = n * n;
@@ -18,14 +18,14 @@ class Program
     // }
 
 
-    //Funtcion task 3 /// 
+    ////Funtcion task 3 /// 
     // public static double celesiustofahrndheit(double c)
     // {
     //     double f = (c * 9 / 5) + 32;
     //     return f; 
     // }
 
-    //Function task 4 ///
+    ////Function task 4 ///
     // public static void displaymenu()
     // {
     //     Console.WriteLine("Please select an option");
@@ -40,7 +40,7 @@ class Program
     //     return (n % 2 == 0);
     // }
 
-    // Function task 6 //
+    //// Function task 6 //
     // public static double area(double x, double y)
     // {
     //     return x * y;
@@ -51,32 +51,41 @@ class Program
     //     return 2+ (x * y);
     // }
 
-    //Function 7 //
-    public static string GetGradeLetter(int g)
-    {
-        if (g >= 90)
-        {
-            return "A";
-        }
-        else if (g >=80)
-        {
-             return "B";
-        } 
-        else if (g>=70)
-        {
-           return "C";
-        }
-        else if (g >=60)
-        {
-            return "D";
-        }
-        else
-        {
-            return "E";
-        }
-        
-    }
+    ////Function 7 //
+    // public static string GetGradeLetter(int g)
+    // {
+    //     if (g >= 90)
+    //     {
+    //         return "A";
+    //     }
+    //     else if (g >=80)
+    //     {
+    //          return "B";
+    //     } 
+    //     else if (g>=70)
+    //     {
+    //        return "C";
+    //     }
+    //     else if (g >=60)
+    //     {
+    //         return "D";
+    //     }
+    //     else
+    //     {
+    //         return "E";
+    //     }
+    //     
+    // }
     
+    ////Function task 8 //
+    public static void Countdown(int c)
+    {
+        for (int i = c; i >= 1; i--)
+        {
+            Console.WriteLine(i);
+        }
+        Console.WriteLine("done");
+    }
     
     
 
@@ -119,7 +128,7 @@ class Program
         //     Console.WriteLine("Odd");
         // }
         
-        // task 6 // 
+        //// task 6 // 
         // Console.Write("Enter Length: ");
         // double length = double.Parse(Console.ReadLine());
         // Console.Write("Enter Width: ");
@@ -127,11 +136,16 @@ class Program
         // Console.WriteLine("Area is : " + area(length, width));
         // Console.WriteLine("Perimeter is : " + perimeter(length, width));
         
-        // task 7 // 
-        Console.Write("Enter a grade: ");
-        int g = int.Parse(Console.ReadLine());
-        string gradeLetter = GetGradeLetter(g);
-        Console.WriteLine("yor grade is:"+gradeLetter);
+        //// task 7 // /
+        // Console.Write("Enter a grade: ");
+        // int g = int.Parse(Console.ReadLine());
+        // string gradeLetter = GetGradeLetter(g);
+        // Console.WriteLine("yor grade is:"+gradeLetter);
+        
+        ///// task 8////
+        Console.Write("Enter a stsring number: ");
+        int s = int.Parse(Console.ReadLine());
+        Countdown(s);
 
 
     }
