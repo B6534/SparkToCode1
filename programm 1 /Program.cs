@@ -1,4 +1,6 @@
-﻿namespace programm_1;
+﻿using System.ComponentModel.Design;
+
+namespace programm_1;
 
 class Program
 {
@@ -39,15 +41,43 @@ class Program
     // }
 
     // Function task 6 //
-    public static double area(double x, double y)
-    {
-        return x * y;
-    }
+    // public static double area(double x, double y)
+    // {
+    //     return x * y;
+    // }
+    //
+    // public static double perimeter(double x, double y)
+    // {
+    //     return 2+ (x * y);
+    // }
 
-    public static double perimeter(double x, double y)
+    //Function 7 //
+    public static string GetGradeLetter(int g)
     {
-        return 2+ (x * y);
+        if (g >= 90)
+        {
+            return "A";
+        }
+        else if (g >=80)
+        {
+             return "B";
+        } 
+        else if (g>=70)
+        {
+           return "C";
+        }
+        else if (g >=60)
+        {
+            return "D";
+        }
+        else
+        {
+            return "E";
+        }
+        
     }
+    
+    
     
 
     static void Main(string[] args)
@@ -90,12 +120,18 @@ class Program
         // }
         
         // task 6 // 
-        Console.Write("Enter Length: ");
-        double length = double.Parse(Console.ReadLine());
-        Console.Write("Enter Width: ");
-        double width = double.Parse(Console.ReadLine());
-        Console.WriteLine("Area is : " + area(length, width));
-        Console.WriteLine("Perimeter is : " + perimeter(length, width));
+        // Console.Write("Enter Length: ");
+        // double length = double.Parse(Console.ReadLine());
+        // Console.Write("Enter Width: ");
+        // double width = double.Parse(Console.ReadLine());
+        // Console.WriteLine("Area is : " + area(length, width));
+        // Console.WriteLine("Perimeter is : " + perimeter(length, width));
+        
+        // task 7 // 
+        Console.Write("Enter a grade: ");
+        int g = int.Parse(Console.ReadLine());
+        string gradeLetter = GetGradeLetter(g);
+        Console.WriteLine("yor grade is:"+gradeLetter);
 
 
     }
