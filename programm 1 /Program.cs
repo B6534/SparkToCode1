@@ -78,17 +78,30 @@ class Program
     // }
     
     ////Function task 8 //
-    public static void Countdown(int c)
+    // public static void Countdown(int c)
+    // {
+    //     for (int i = c; i >= 1; i--)
+    //     {
+    //         Console.WriteLine(i);
+    //     }
+    //     Console.WriteLine("done");
+    // }
+    
+    ////Funtion task 9 //
+    public static int Multiply(int a, int b)
     {
-        for (int i = c; i >= 1; i--)
-        {
-            Console.WriteLine(i);
-        }
-        Console.WriteLine("done");
+        return a * b;
     }
-    
-    
 
+    public static double Multiply(double a, double b)
+    {
+        return a * b;
+    }
+
+    public static int Multiply(int a, int b, int c)
+    {
+        return a * b * c;
+    }
     static void Main(string[] args)
     {
         
@@ -143,9 +156,17 @@ class Program
         // Console.WriteLine("yor grade is:"+gradeLetter);
         
         ///// task 8////
-        Console.Write("Enter a stsring number: ");
-        int s = int.Parse(Console.ReadLine());
-        Countdown(s);
+        // Console.Write("Enter a stsring number: ");
+        // int s = int.Parse(Console.ReadLine());
+        // Countdown(s);
+        
+        //// task 9 ///
+        int m1 = Multiply(4, 5);
+        double m2 = Multiply(4.2, 5.5);
+        int m3 = Multiply(4, 5,9);
+        Console.WriteLine("tow int: "+m1);
+        Console.WriteLine("tow double: "+m2);
+        Console.WriteLine("three int : "+m3);
 
 
     }
