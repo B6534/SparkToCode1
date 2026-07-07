@@ -24,12 +24,18 @@ class Program
     // }
 
     //Function task 4 ///
-    public static void displaymenu()
+    // public static void displaymenu()
+    // {
+    //     Console.WriteLine("Please select an option");
+    //     Console.WriteLine("1. start");
+    //     Console.WriteLine("2. help");
+    //     Console.WriteLine("3. exit");
+    // }
+
+    // Function task 5 //
+    public static bool iEven(int n )
     {
-        Console.WriteLine("Please select an option");
-        Console.WriteLine("1. start");
-        Console.WriteLine("2. help");
-        Console.WriteLine("3. exit");
+        return (n % 2 == 0);
     }
     
 
@@ -58,7 +64,20 @@ class Program
         
         // displaymenu();
         
-        
+        // task 5 // 
+        Console.WriteLine("Enter a number");
+        int number= int.Parse(Console.ReadLine());
+        bool ieven = iEven(number);
+        if (ieven)
+        {
+            Console.WriteLine("Even");
+            
+        }
+        else
+        {
+            Console.WriteLine("Odd");
+        }
+
 
     }
     
