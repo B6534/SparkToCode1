@@ -33,9 +33,20 @@ class Program
     // }
 
     // Function task 5 //
-    public static bool iEven(int n )
+    // public static bool iEven(int n )
+    // {
+    //     return (n % 2 == 0);
+    // }
+
+    // Function task 6 //
+    public static double area(double x, double y)
     {
-        return (n % 2 == 0);
+        return x * y;
+    }
+
+    public static double perimeter(double x, double y)
+    {
+        return 2+ (x * y);
     }
     
 
@@ -65,18 +76,26 @@ class Program
         // displaymenu();
         
         // task 5 // 
-        Console.WriteLine("Enter a number");
-        int number= int.Parse(Console.ReadLine());
-        bool ieven = iEven(number);
-        if (ieven)
-        {
-            Console.WriteLine("Even");
-            
-        }
-        else
-        {
-            Console.WriteLine("Odd");
-        }
+        // Console.WriteLine("Enter a number");
+        // int number= int.Parse(Console.ReadLine());
+        // bool ieven = iEven(number);
+        // if (ieven)
+        // {
+        //     Console.WriteLine("Even");
+        //     
+        // }
+        // else
+        // {
+        //     Console.WriteLine("Odd");
+        // }
+        
+        // task 6 // 
+        Console.Write("Enter Length: ");
+        double length = double.Parse(Console.ReadLine());
+        Console.Write("Enter Width: ");
+        double width = double.Parse(Console.ReadLine());
+        Console.WriteLine("Area is : " + area(length, width));
+        Console.WriteLine("Perimeter is : " + perimeter(length, width));
 
 
     }
