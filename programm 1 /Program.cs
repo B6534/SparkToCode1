@@ -9,11 +9,20 @@ class Program
     // }
 
     // function task 2 //
-    public static int square(int n)
+    // public static int square(int n)
+    // {
+    //     int sequarev = n * n;
+    //     return sequarev;
+    // }
+
+
+    //Funtcion task 3 /// 
+    public static double celesiustofahrndheit(double c)
     {
-        int sequarev = n * n;
-        return sequarev;
+        double f = (c * 9 / 5) + 32;
+        return f; 
     }
+    
 
     static void Main(string[] args)
     {
@@ -25,11 +34,17 @@ class Program
         
         //// task 2 ///
         
-        Console.WriteLine("Enter a number:");
-        int number= int.Parse(Console.ReadLine());
-        int result = square(number);
-        Console.WriteLine("the square is: "+result);
+        // Console.WriteLine("Enter a number:");
+        // int number= int.Parse(Console.ReadLine());
+        // int result = square(number);
+        // Console.WriteLine("the square is: "+result);
         
+        //// task 3 ///
+        Console.WriteLine("Enter temperature in Celsius:");
+        double celsius = double.Parse(Console.ReadLine());
+        double fahrenheit = celesiustofahrndheit(celsius);
+        Console.WriteLine("temperature  in fihernhit is: " + fahrenheit);
+
     }
     
      
