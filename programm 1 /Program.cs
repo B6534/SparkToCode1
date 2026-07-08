@@ -75,24 +75,63 @@ class Program
          // }
          
          //// task 5 //
-         int[] grades = new int[5];
-         double sum = 0; 
-         for (int i = 0; i < grades.Length; i++)
-         {
-             Console.Write("Enter grade " + (i + 1) );
-             grades[i] = int.Parse(Console.ReadLine());
-             sum += grades[i];
-         }
-         Array.Sort(grades);
-         double average = sum/grades.Length;
-         int lowest = grades[0];
-         int highest = grades[grades.Length - 1];
+         // int[] grades = new int[5];
+         // double sum = 0; 
+         // for (int i = 0; i < grades.Length; i++)
+         // {
+         //     Console.Write("Enter grade " + (i + 1) );
+         //     grades[i] = int.Parse(Console.ReadLine());
+         //     sum += grades[i];
+         // }
+         // Array.Sort(grades);
+         // double average = sum/grades.Length;
+         // int lowest = grades[0];
+         // int highest = grades[grades.Length - 1];
+         //
+         // Console.WriteLine(" Grade Results ");
+         // Console.WriteLine("Sorted Grades: " + string.Join(", ", grades));
+         // Console.WriteLine("Lowest Grade: " + lowest);
+         // Console.WriteLine("Highest Grade: " + highest);
+         // Console.WriteLine("Average Grade: " + average);
          
-         Console.WriteLine(" Grade Results ");
-         Console.WriteLine("Sorted Grades: " + string.Join(", ", grades));
-         Console.WriteLine("Lowest Grade: " + lowest);
-         Console.WriteLine("Highest Grade: " + highest);
-         Console.WriteLine("Average Grade: " + average);
+         //// task 6 //
+         
+         List<string> shoppingList = new List<string>();
+         string input = "";
+         Console.WriteLine("Enter items for your shopping list (type 'done' to finish):");
+         while (input.ToLower() != "done")
+         {
+             Console.Write("Item: ");
+             input = Console.ReadLine();
+            
+             if (input.ToLower() != "done")
+             {
+                 shoppingList.Add(input);
+             }
+         }
+         Console.WriteLine("Initial Shopping List:");
+         foreach (string item in shoppingList)
+         {
+             Console.WriteLine(item);
+         }
+
+         // Removal phase
+         Console.Write("\nEnter an item name to remove: ");
+         string itemToRemove = Console.ReadLine();
+
+         if (shoppingList.Remove(itemToRemove))
+         {
+             Console.WriteLine(itemToRemove + " removed.");
+         }
+         else
+         {
+             Console.WriteLine("Item not found in the list.");
+         }
+         Console.WriteLine("Final Shopping List:");
+         foreach (string item in shoppingList)
+         {
+             Console.WriteLine( item);
+         }
 
 
 
