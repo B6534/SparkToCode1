@@ -116,7 +116,7 @@ class Program
          }
 
          // Removal phase
-         Console.Write("\nEnter an item name to remove: ");
+         Console.Write("Enter an item name to remove: ");
          string itemToRemove = Console.ReadLine();
 
          if (shoppingList.Remove(itemToRemove))
