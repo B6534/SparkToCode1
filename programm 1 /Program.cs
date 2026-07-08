@@ -133,18 +133,54 @@ class Program
          
          //// task 7 //
          
-         List<int> scores = new List<int>();
-         Console.WriteLine("Enter 5 game scores:");
-         for (int i = 0; i < 5; i++)
+         // List<int> scores = new List<int>();
+         // Console.WriteLine("Enter 5 game scores:");
+         // for (int i = 0; i < 5; i++)
+         // {
+         //     Console.Write("Score :"+ (i + 1));
+         //     scores.Add(int.Parse(Console.ReadLine()));
+         // }
+         // scores.Reverse();
+         // Console.WriteLine("High Score Podium ");
+         // Console.WriteLine("1. place: " + scores[0]);
+         // Console.WriteLine("2. place: " + scores[1]);
+         // Console.WriteLine("3. place: " + scores[2]);
+         
+         //// task 8 //
+         
+         Stack<string> actionHistory = new Stack<string>();
+         string action = " ";
+         Console.WriteLine("Enter editor actions (type 'stop' to finish):");
+         while (true)
          {
-             Console.Write("Score :"+ (i + 1));
-             scores.Add(int.Parse(Console.ReadLine()));
+             Console.Write("Action: ");
+             action = Console.ReadLine();
+
+             if (action.ToLower() == "stop")
+             {
+                 break;
+             }
+
+             actionHistory.Push(action);
          }
-         scores.Reverse();
-         Console.WriteLine("High Score Podium ");
-         Console.WriteLine("1. place: " + scores[0]);
-         Console.WriteLine("2. place: " + scores[1]);
-         Console.WriteLine("3. place: " + scores[2]);
+         Console.WriteLine("Undoing Last Two Actions");
+         for (int i = 0; i < 2; i++)
+         {
+             if (actionHistory.Count > 0)
+             {
+                 string undoneAction = actionHistory.Pop();
+                 Console.WriteLine("Undone: " + undoneAction);
+             }
+             else
+             {
+                 Console.WriteLine("Nothing left to undo.");
+             }
+         }
+         Console.WriteLine("Remaining Actions in History: ");
+         foreach (string remainingAction in actionHistory)
+         {
+             Console.WriteLine(remainingAction);
+         }
 
 
 
