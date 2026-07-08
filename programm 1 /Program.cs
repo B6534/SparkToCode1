@@ -213,7 +213,7 @@ Task-day-5
          }
          
     }
-    //// function task 9 ///
+    //// function task 9 ////
     public static double CalculateAverage(List<int> grades)
     {
         double sum = 0;
