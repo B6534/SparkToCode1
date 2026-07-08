@@ -148,42 +148,79 @@ class Program
          
          //// task 8 //
          
-         Stack<string> actionHistory = new Stack<string>();
-         string action = " ";
-         Console.WriteLine("Enter editor actions (type 'stop' to finish):");
-         while (true)
+         // Stack<string> actionHistory = new Stack<string>();
+         // string action = " ";
+         // Console.WriteLine("Enter editor actions (type 'stop' to finish):");
+         // while (true)
+         // {
+         //     Console.Write("Action: ");
+         //     action = Console.ReadLine();
+         //
+         //     if (action.ToLower() == "stop")
+         //     {
+         //         break;
+         //     }
+         //
+         //     actionHistory.Push(action);
+         // }
+         // Console.WriteLine("Undoing Last Two Actions");
+         // for (int i = 0; i < 2; i++)
+         // {
+         //     if (actionHistory.Count > 0)
+         //     {
+         //         string undoneAction = actionHistory.Pop();
+         //         Console.WriteLine("Undone: " + undoneAction);
+         //     }
+         //     else
+         //     {
+         //         Console.WriteLine("Nothing left to undo.");
+         //     }
+         // }
+         // Console.WriteLine("Remaining Actions in History: ");
+         // foreach (string remainingAction in actionHistory)
+         // {
+         //     Console.WriteLine(remainingAction);
+         // }
+         
+         //// task 9 ///
+         Console.Write("How many grades do you want to enter? ");
+         int count = int.Parse(Console.ReadLine());
+         List<int> grades = new List<int>();
+         for (int i = 0; i < count; i++)
          {
-             Console.Write("Action: ");
-             action = Console.ReadLine();
-
-             if (action.ToLower() == "stop")
-             {
-                 break;
-             }
-
-             actionHistory.Push(action);
+             Console.Write("Enter grade :" + (i + 1));
+             grades.Add(int.Parse(Console.ReadLine()));
          }
-         Console.WriteLine("Undoing Last Two Actions");
-         for (int i = 0; i < 2; i++)
+
+         double average = CalculateAverage(grades);
+         int firstFailure = FindFirstFailing(grades);
+
+         Console.WriteLine("Results : ");
+         Console.WriteLine("Average grade: " + average);
+
+         if (firstFailure != 0)
          {
-             if (actionHistory.Count > 0)
-             {
-                 string undoneAction = actionHistory.Pop();
-                 Console.WriteLine("Undone: " + undoneAction);
-             }
-             else
-             {
-                 Console.WriteLine("Nothing left to undo.");
-             }
+             Console.WriteLine("First failing grade found: " + firstFailure);
          }
-         Console.WriteLine("Remaining Actions in History: ");
-         foreach (string remainingAction in actionHistory)
+         else
          {
-             Console.WriteLine(remainingAction);
+             Console.WriteLine("No failing grades found!");
          }
+         
+    }
+    //// function task 9 ///
+    public static double CalculateAverage(List<int> grades)
+    {
+        double sum = 0;
+        foreach (int grade in grades)
+        {
+            sum += grade;
+        }
+        return sum/grades.Count;
+    }
 
-
-
-
+    public static int FindFirstFailing(List<int> grades)
+    {
+        return grades.Find(g => g < 60);
     }
 }
