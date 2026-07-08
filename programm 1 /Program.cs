@@ -142,9 +142,9 @@ class Program
          }
          scores.Reverse();
          Console.WriteLine("High Score Podium ");
-         Console.WriteLine("1st place: " + scores[0]);
-         Console.WriteLine("2nd place: " + scores[1]);
-         Console.WriteLine("3rd place: " + scores[2]);
+         Console.WriteLine("1. place: " + scores[0]);
+         Console.WriteLine("2. place: " + scores[1]);
+         Console.WriteLine("3. place: " + scores[2]);
 
 
 
