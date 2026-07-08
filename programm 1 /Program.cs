@@ -60,19 +60,39 @@ class Program
          // }
          
          //// task 4 //
-         Queue<string>  customers = new Queue<string>();
-         for (int i = 0; i < 3; i++)
+         // Queue<string>  customers = new Queue<string>();
+         // for (int i = 0; i < 3; i++)
+         // {
+         //     Console.WriteLine("Enter customer Name: " + (i+1));
+         //     string customerName = Console.ReadLine();
+         //     customers.Enqueue(customerName);
+         // }
+         //
+         // foreach (string waiting in customers)
+         // {
+         //     Console.WriteLine(" wating list: " + wating);
+         //     
+         // }
+         
+         //// task 5 //
+         int[] grades = new int[5];
+         double sum = 0; 
+         for (int i = 0; i < grades.Length; i++)
          {
-             Console.WriteLine("Enter customer Name: " + (i+1));
-             string customerName = Console.ReadLine();
-             customers.Enqueue(customerName);
+             Console.Write("Enter grade " + (i + 1) );
+             grades[i] = int.Parse(Console.ReadLine());
+             sum += grades[i];
          }
-
-         foreach (string wating in customers)
-         {
-             Console.WriteLine(" wating list: " + wating);
-             
-         }
+         Array.Sort(grades);
+         double average = sum/grades.Length;
+         int lowest = grades[0];
+         int highest = grades[grades.Length - 1];
+         
+         Console.WriteLine(" Grade Results ");
+         Console.WriteLine("Sorted Grades: " + string.Join(", ", grades));
+         Console.WriteLine("Lowest Grade: " + lowest);
+         Console.WriteLine("Highest Grade: " + highest);
+         Console.WriteLine("Average Grade: " + average);
 
 
 
