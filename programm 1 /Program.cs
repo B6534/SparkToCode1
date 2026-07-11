@@ -87,7 +87,7 @@ namespace BankingSystemApp
             throw new InvalidOperationException();
         }
 
-        // ===================== SERVICE FUNCTIONS =====================
+        /// ===================== SERVICE FUNCTIONS =====================
 
         static void AddAccount()
         {
