@@ -1,84 +1,119 @@
-﻿namespace programm_1;
+﻿using System;
+using System.Collections.Generic;
 
-class Program
+namespace BankingSystemApp
 {
-    static void Main(string[] args)
+    internal class Program
     {
-        // Console.WriteLine("Hello, SparkToCode!");
-        //
-        // Console.WriteLine("Please enter your Name: ");
-        // string userName =  Console.ReadLine();
-        //
-        // Console.Write("Enter your Age: ");
-        // int uaerage = int.Parse(Console.ReadLine());
-        //
-        // Console.WriteLine("Please enter your salary: ");
-        // float usersalary = float.Parse(Console.ReadLine());
-        //
-        // Console.WriteLine("hello "+userName);
-        // Console.WriteLine("You are "+uaerage);
-        // Console.WriteLine("Your salary: "+usersalary);
-        
-        Console.WriteLine("Enter first Number: ");
-        float firstNumber = float.Parse(Console.ReadLine());
-        
-        Console.WriteLine("Enter second Number: ");
-        float secondNumber = float.Parse(Console.ReadLine());
-        
-        float addresult = firstNumber + secondNumber;
-        Console.WriteLine("Addtion:" + addresult);
-        
-        float Subtractresult = firstNumber - secondNumber;
-        Console.WriteLine("Subtract: " + Subtractresult);
+        static List<string> customerNames = new List<string>();
+        static List<string> accountNumbers = new List<string>();
+        static List<double> balances = new List<double>();
 
-        float Multiplicationresult = firstNumber * secondNumber;
-        Console.WriteLine("Multiplication: " + Multiplicationresult);
-        
-        float Divisionresult = firstNumber / secondNumber;
-        Console.WriteLine("Division:" + Divisionresult);
-        
-        // and &&
-        // or ||
-        // not ! 
-
-        Console.WriteLine("Enter First digree: ");
-        float digree = float.Parse(Console.ReadLine());
-
-        if (digree < 50)
+        static void Main(string[] args)
         {
-            Console.WriteLine("YOU failed ");
-        }
-        else if (digree > 50 && digree < 100) ;
+            bool exitApp = false;
+            while (!exitApp)
+            {
+                Console.WriteLine("\n===== Welcome to Spark Bank =====");
+                Console.WriteLine("1. Add New Account");
+                Console.WriteLine("2. Deposit Money");
+                Console.WriteLine("3. Withdraw Money");
+                Console.WriteLine("4. Show Balance");
+                Console.WriteLine("5. Transfer Amount");
+                Console.WriteLine("6. <your 1st custom service - choose a name>");
+                Console.WriteLine("7. <your 2nd custom service - choose a name>");
+                Console.WriteLine("8. Exit");
+                Console.Write("Choose an option: ");
 
+                int choice;
+                try
+                {
+                    choice = int.Parse(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Invalid input. Please enter a number from 1 to 8.");
+                    continue;
+                }
+
+                switch (choice)
+                {
+                    case 1:
+                        AddAccount();
+                        break;
+                    case 2:
+                        DepositMoney();
+                        break;
+                    case 3:
+                        WithdrawMoney();
+                        break;
+                    case 4:
+                        ShowBalance();
+                        break;
+                    case 5:
+                        TransferAmount();
+                        break;
+                    case 6:
+                        // TODO: call your first custom service function here
+                        break;
+                    case 7:
+                        // TODO: call your second custom service function here
+                        break;
+                    case 8:
+                        exitApp = true;
+                        Console.WriteLine("Thank you for banking with Spark Bank. Goodbye!");
+                        break;
+                    default:
+                        Console.WriteLine("Invalid option, please choose between 1 and 8.");
+                        break;
+                }
+            }
+        }
+
+        // ===================== HELPER FUNCTION =====================
+
+        static int FindAccountIndex(string accNum)
         {
-            Console.WriteLine("YOU pass ");
-        }
-////////////////////////////////////////////////////////////////////12
-/// 
-        Console.WriteLine("Welcome to main menu:");
-        Console.WriteLine("1.Deposited");
-        Console.WriteLine("2.withdraw");
-        Console.WriteLine("3.blance chack ");
-        
-        Console.WriteLine("please choose an option: ");
-        int option = int.Parse(Console.ReadLine());
+            for (int i = 0; i < accountNumbers.Count; i++)
+            {
+                if (accountNumbers[i] == accNum)
+                {
+                    return i;
+                }
 
-        switch (option)
+                return -1;
+            }
+
+            throw new InvalidOperationException();
+        }
+
+        // ===================== SERVICE FUNCTIONS =====================
+
+        static void AddAccount()
         {
-            case 1: 
-                Console.WriteLine("deposited");
-                break;
-            case 2:
-                Console.WriteLine("withdraw");
-                break;
-            case 3:
-                Console.WriteLine("divided");
-                break;
-            default:
-                Console.WriteLine("Not a valid option");
-                break;
+            // TODO: implement (Section 3)
         }
-        
 
+        static void DepositMoney()
+        {
+            ////TODO: implement (Section 3)  
+        }
+
+        static void WithdrawMoney()
+        {
+            // //TODO: implement (Section 3)
+        }
+
+        static void ShowBalance()
+        {
+            // TODO: implement (Section 3)
+        }
+
+        static void TransferAmount()
+        {
+            // TODO: implement (Section 3)
+        }
+
+        // TODO: two custom service functions for options 6 and 7
     }
 }
