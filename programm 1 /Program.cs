@@ -84,12 +84,34 @@ namespace BankingSystemApp
             }
             return -1; 
         }
-
+        
         /// ===================== SERVICE FUNCTIONS =====================
 
         static void AddAccount()
         {
-            // TODO: implement (Section 3)
+            Console.WriteLine("Enter your Name: ");
+            string name = Console.ReadLine();
+            
+            Console.WriteLine("Enter your New Account Number: ");
+            string accountNumber = Console.ReadLine();
+            int index = FindAccountIndex(accountNumber);
+            if (index != -1)
+            {
+                Console.WriteLine("Account already exists. Please choose a different account number.");
+                return; 
+            }
+            
+            Console.WriteLine("Enter your diposite: ");
+            double diposite = double.Parse(Console.ReadLine());
+            if (diposite < 0)
+            {
+                Console.WriteLine("You can't add a negative number!");
+                return; 
+            }
+            balances.Add(diposite);
+            customerNames.Add(name);
+            accountNumbers.Add(accountNumber);
+            Console.WriteLine(" Your Account is successfully created ");
         }
 
         static void DepositMoney()
