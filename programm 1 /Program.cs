@@ -183,7 +183,45 @@ namespace BankingSystemApp
 
         static void TransferAmount()
         {
-            // TODO: implement (Section 3)
+          Console.WriteLine("Enter sender  Account Number: ");
+          string accNum1 = Console.ReadLine();
+          int indexsender = FindAccountIndex(accNum1);
+          if (indexsender == -1)
+          {
+              Console.WriteLine("Sender not found");
+              return;
+          }
+          Console.WriteLine("Enter receiver  Account Number: ");
+          string accNum2 = Console.ReadLine();
+          int indexreceiver = FindAccountIndex(accNum2);
+          if (indexreceiver == -1)
+          {
+              Console.WriteLine("Receiver not found");
+              return;
+          }
+          
+          Console.WriteLine("Enter transfer  amount : ");
+          double amount = double.Parse(Console.ReadLine());
+          
+          if (amount <=0)
+          {
+              Console.WriteLine("Error!");
+              return;
+          }
+          
+          if (amount > balances[indexsender])
+          {
+              Console.WriteLine("Insufficient balance");
+              return;
+          }
+          
+          balances[indexsender] -= amount;
+          balances[indexreceiver] += amount;
+          Console.WriteLine("Updated balance: " + balances[indexsender]);
+          Console.WriteLine("Updated balance: " + balances[indexreceiver]);
+          
+          
+          
         }
 
         // TODO: two custom service functions for options 6 and 7
