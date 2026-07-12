@@ -78,13 +78,11 @@ namespace BankingSystemApp
             {
                 if (accountNumbers[i] == accNum)
                 {
-                    return i;
+                    return i; 
                 }
-
-                return -1;
+                
             }
-
-            throw new InvalidOperationException();
+            return -1; 
         }
 
         /// ===================== SERVICE FUNCTIONS =====================
