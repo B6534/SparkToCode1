@@ -116,7 +116,24 @@ namespace BankingSystemApp
 
         static void DepositMoney()
         {
-            ////TODO: implement (Section 3)  
+            Console.WriteLine("Enter your Account Number: ");
+            string accNum = Console.ReadLine();
+            int index = FindAccountIndex(accNum);
+            if (index == -1)
+            {
+                Console.WriteLine("Account Not Found. Please choose a different account number.");
+                return; 
+            }
+            Console.WriteLine("Enter your deposit Money: ");
+            double money = double.Parse(Console.ReadLine());
+            if (money <=0)
+            {
+                Console.WriteLine("Error!");
+                return;
+            }
+
+            balances[index]+= money;
+            Console.WriteLine("Updated balance: " + balances[index]);
         }
 
         static void WithdrawMoney()
