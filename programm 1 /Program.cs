@@ -73,12 +73,10 @@ class Program
                 break;
             case 3:
                 Console.WriteLine("divided");
-                break;
+                ///////break;
             default:
                 Console.WriteLine("Not a valid option");
                 break;
         }
-        
-
     }
 }
