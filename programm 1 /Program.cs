@@ -1,4 +1,6 @@
-﻿namespace programm_1;
+﻿using System.Diagnostics;
+
+namespace programm_1;
 
 class Program
 {
@@ -114,8 +116,47 @@ class Program
             Console.WriteLine("Transaction sent successfully");
         }
     }
+    
+    static BankAccount account1 =  new BankAccount();
+    static BankAccount account2 =  new BankAccount();
+    static Student student1 = new Student();
+    static Student student2 = new Student();
+    static Product product1 = new Product();
+    static Product product2 = new Product();
+    
+    
     static void Main(string[] args)
     {
+        
+        //// Bank class ////
+               
+        account1.HolderName = "Asala Alamri";
+        account1.Balance = 1000;
+        account1.AccountNumber = 222121;
+                 
+               
+        account2.Balance = 2000;
+        account2.AccountNumber = 23342;
+        account2.HolderName = "Bassam";
+                
+        ////// student class /// 
+        student1.Name = "John Doe";
+        student1.Grade = 56;
+        student1.Address = "123 Main Street";
+                
+        student2.Name = "Ali jon";
+        student2.Grade = 57;
+        student2.Address = "123 garden Street";
+                
+        ///// Product class //// 
+        product1.Price = 230.2;
+        product1.StockQuantity = 5;
+        product1.ProductName = " car";
+
+        product2.Price = 290.2;
+        product2.StockQuantity = 4;
+        product2.ProductName = " phone";
+        
        bool exitApp = false;
 
             while (exitApp==false)
@@ -206,7 +247,23 @@ class Program
                 Console.WriteLine("press any key");
                 Console.ReadKey();
                 Console.Clear();
-
+                
             } 
+    }
+    //// case 1 ////
+    static void ViewAccountDetails()
+    {
+        Console.WriteLine("Choice one a account: 1 or 2 ");
+        int pick= Convert.ToInt32(Console.ReadLine());
+        
+        if (pick == 1)
+        {
+            account1.CheckBalance();
+        }
+        else
+        {
+            account2.CheckBalance();
+        }
+        
     }
 }
