@@ -19,18 +19,19 @@ class Program
             Console.WriteLine("Email sent successfully");
         }
 
-        public void  Deposit(double amount)
+        public void Deposit(double amount)
         {
             Balance += amount;
             SendEmail();
         }
-        
+
         public void Withdraw(double amount)
         {
             if (Balance >= amount)
             {
                 Balance -= amount;
             }
+
             SendEmail();
         }
 
@@ -38,8 +39,32 @@ class Program
         {
             PrintInformation();
             return Balance;
-            
+
         }
+    }
+
+    class Student
+    {
+        public int Grade { get; set; }
+        public string Name { get; set; }
+        public string Address { get; set; }
+        private string email {get; set;}
+        private int age;
+
+        public void Register(string Email)
+        {
+            email = Email;
+            SendEmail();
+        }
+
+        private void SendEmail()
+        {
+            Console.WriteLine("Email sent successfully");
+        }
+        
+        
+    }
+
     static void Main(string[] args)
     {
        bool exitApp = false;
