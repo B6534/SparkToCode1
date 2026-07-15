@@ -2,81 +2,137 @@
 
 class Program
 {
+    class BankAccount
+    {
+        public double Balance { get; set; }
+        public string HolderName { get; set; }
+        public int AccountNumber { get; set; }
+
+        private void PrintInformation()
+        {
+            Console.WriteLine("Holder Name: " + HolderName);
+            Console.WriteLine("Balance: " + Balance);
+        }
+
+        private void SendEmail()
+        {
+            Console.WriteLine("Email sent successfully");
+        }
+
+        public void  Deposit(double amount)
+        {
+            Balance += amount;
+            SendEmail();
+        }
+        
+        public void Withdraw(double amount)
+        {
+            if (Balance >= amount)
+            {
+                Balance -= amount;
+            }
+            SendEmail();
+        }
+
+        public double CheckBalance()
+        {
+            PrintInformation();
+            return Balance;
+            
+        }
     static void Main(string[] args)
     {
-        // Console.WriteLine("Hello, SparkToCode!");
-        //
-        // Console.WriteLine("Please enter your Name: ");
-        // string userName =  Console.ReadLine();
-        //
-        // Console.Write("Enter your Age: ");
-        // int uaerage = int.Parse(Console.ReadLine());
-        //
-        // Console.WriteLine("Please enter your salary: ");
-        // float usersalary = float.Parse(Console.ReadLine());
-        //
-        // Console.WriteLine("hello "+userName);
-        // Console.WriteLine("You are "+uaerage);
-        // Console.WriteLine("Your salary: "+usersalary);
-        
-        Console.WriteLine("Enter first Number: ");
-        float firstNumber = float.Parse(Console.ReadLine());
-        
-        Console.WriteLine("Enter second Number: ");
-        float secondNumber = float.Parse(Console.ReadLine());
-        
-        float addresult = firstNumber + secondNumber;
-        Console.WriteLine("Addtion:" + addresult);
-        
-        float Subtractresult = firstNumber - secondNumber;
-        Console.WriteLine("Subtract: " + Subtractresult);
+       bool exitApp = false;
 
-        float Multiplicationresult = firstNumber * secondNumber;
-        Console.WriteLine("Multiplication: " + Multiplicationresult);
-        
-        float Divisionresult = firstNumber / secondNumber;
-        Console.WriteLine("Division:" + Divisionresult);
-        
-        // and &&
-        // or ||
-        // not ! 
+            while (exitApp==false)
+            {
+                Console.WriteLine("\n===== OOP Part 1 - Bank / Student / Product Manager =====");
+                Console.WriteLine(" 1. View Account Details");
+                Console.WriteLine(" 2. Update Student Address");
+                Console.WriteLine(" 3. Make a Deposit");
+                Console.WriteLine(" 4. Make a Withdrawal");
+                Console.WriteLine(" 5. View Product Details");
+                Console.WriteLine(" 6. Register a Student");
+                Console.WriteLine(" 7. Compare Two Account Balances");
+                Console.WriteLine(" 8. Restock Product & Stock Level Check");
+                Console.WriteLine(" 9. Transfer Between Accounts");
+                Console.WriteLine("10. Update Student Grade (Validated)");
+                Console.WriteLine("11. Student Report Card");
+                Console.WriteLine("12. Account Health Status");
+                Console.WriteLine("13. Bulk Sale With Revenue Calculation");
+                Console.WriteLine("14. Scholarship Eligibility Check");
+                Console.WriteLine("15. Full Balance Top-Up Flow");
+                Console.WriteLine("16. Quick Account Opening (Parameterized Constructor)");
+                Console.WriteLine("17. Total Students Counter (Static Field & Method)");
+                Console.WriteLine("18. Overdrawn Account Check (Read-Only Property)");
+                Console.WriteLine("19. Set Student Security PIN (Write-Only Property)");
+                Console.WriteLine("20. Exit");
+                Console.Write("Choose an option: ");
 
-        Console.WriteLine("Enter First digree: ");
-        float digree = float.Parse(Console.ReadLine());
+                int choice;
+                try
+                {
+                    choice = int.Parse(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Invalid input. Please enter a number from 1 to 20.");
+                    continue;
+                }
 
-        if (digree < 50)
-        {
-            Console.WriteLine("YOU failed ");
-        }
-        else if (digree > 50 && digree < 100) ;
+                switch (choice)
+                {
+                    case 1: ViewAccountDetails();
+                        break;
+                    case 2: UpdateStudentAddress();
+                        break;
+                    case 3: MakeDeposit();
+                        break;
+                    case 4: MakeWithdrawal();
+                        break;
+                    case 5: ViewProductDetails();
+                        break;
+                    case 6: RegisterStudent();
+                        break;
+                    case 7: CompareAccountBalances();
+                        break;
+                    case 8: RestockProduct();
+                        break;
+                    case 9: TransferBetweenAccounts();
+                        break;
+                    case 10: UpdateStudentGrade();
+                        break;
+                    case 11: StudentReportCard();
+                        break;
+                    case 12: AccountHealthStatus();
+                        break;
+                    case 13: BulkSaleWithRevenue();
+                        break;
+                    case 14: ScholarshipEligibilityCheck();
+                        break;
+                    case 15: FullBalanceTopUpFlow();
+                        break;
+                    case 16: QuickAccountOpening();
+                        break;
+                    case 17: TotalStudentsCounter();
+                        break;
+                    case 18: OverdrawnAccountCheck();
+                        break;
+                    case 19: SetStudentSecurityPin(); 
+                        break;
+                    case 20:
+                        exitApp = true;
+                        Console.WriteLine("Goodbye!");
+                        break;
+                    default:
+                        Console.WriteLine("Invalid option, please choose between 1 and 20.");
+                        break;
+                }
 
-        {
-            Console.WriteLine("YOU pass ");
-        }
-////////////////////////////////////////////////////////////////////12
-/// 
-        Console.WriteLine("Welcome to main menu:");
-        Console.WriteLine("1.Deposited");
-        Console.WriteLine("2.withdraw");
-        Console.WriteLine("3.blance chack ");
-        
-        Console.WriteLine("please choose an option: ");
-        int option = int.Parse(Console.ReadLine());
+                Console.WriteLine("press any key");
+                Console.ReadKey();
+                Console.Clear();
 
-        switch (option)
-        {
-            case 1: 
-                Console.WriteLine("deposited");
-                break;
-            case 2:
-                Console.WriteLine("withdraw");
-                break;
-            case 3:
-                Console.WriteLine("divided");
-                ///////break;
-            default:
-                Console.WriteLine("Not a valid option");
-                break;
-        }
+            } 
     }
 }
