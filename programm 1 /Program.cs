@@ -19,20 +19,26 @@ class Student
     public string Name;
     public string Address;
     public int Grade;
+    private string email; // Add this field declaration!
+
     public void Register(string email) 
     {
         this.email = email;
         SendEmail();
     }
     private void SendEmail() => Console.WriteLine("Registration email sent.");
-    
 }
 
 class Product {
     public string ProductName;
     public double Price;
     public int StockQuantity;
-    public double GetInventoryValue() { return Price * StockQuantity; }
+    public double GetInventoryValue() 
+    { 
+        PrintDetails(); 
+        return Price * StockQuantity; 
+    }
+    private void PrintDetails() => Console.WriteLine($"{ProductName}, Price: {Price}, Stock: {StockQuantity}");
 }
 
 class Program
