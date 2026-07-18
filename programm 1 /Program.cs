@@ -1,87 +1,93 @@
 ﻿namespace programm_1;
 
-class Program
+
+class BankAccount 
 {
-    class BankAccount {
     public int AccountNumber;
     public string HolderName;
     public double Balance;
-    // Research Case 18: Read-Only Property
-    public bool IsOverdrawn => Balance < 0;
-
-    // Research Case 16: Parameterized Constructor
-    public BankAccount(int accNum, string name, double bal) {
-        AccountNumber = accNum; HolderName = name; Balance = bal;
-    }
-
-    public void Deposit(double amount) {
-        Balance += amount;
-        SendEmail();
-    }
-
-    public void Withdraw(double amount) {
-        if (Balance >= amount) {
-            Balance -= amount;
-            SendEmail();
-        }
-    }
-
-    public double CheckBalance() {
-        PrintInformation();
-        return Balance;
-    }
-
+    public BankAccount(int accNum, string name, double bal) { AccountNumber = accNum; HolderName = name; Balance = bal; }
+    public void Deposit(double amount) { Balance += amount; SendEmail(); }
+    public void Withdraw(double amount) { if (Balance >= amount) { Balance -= amount; SendEmail(); } }
+    public double CheckBalance() { PrintInformation(); return Balance; }
     private void PrintInformation() => Console.WriteLine($"Holder: {HolderName}, Balance: {Balance}");
     private void SendEmail() => Console.WriteLine("Notification sent.");
 }
 
-class Student {
-    public int Grade;
+class Student 
+{
     public string Name;
     public string Address;
-    private string email; 
-    int age; 
-
-    
-    public static int StudentCount = 0;
-    public Student() { StudentCount++; }
-    public static int GetStudentCount() => StudentCount;
-    
-    private int pin;
-    public int SecurityPin { set { pin = value; } }
-
-    public void Register(string email) {
+    public int Grade;
+    public void Register(string email) 
+    {
         this.email = email;
         SendEmail();
     }
     private void SendEmail() => Console.WriteLine("Registration email sent.");
+    
 }
 
 class Product {
     public string ProductName;
     public double Price;
     public int StockQuantity;
-
-    public void Sell(int quantity) {
-        if (StockQuantity >= quantity) { StockQuantity -= quantity; LogTransaction(); }
-        else Console.WriteLine("Not enough stock.");
-    }
-    public void Restock(int quantity) { StockQuantity += quantity; LogTransaction(); }
-    public double GetInventoryValue() { PrintDetails(); return Price * StockQuantity; }
-    private void PrintDetails() => Console.WriteLine($"{ProductName}, Price: {Price}, Stock: {StockQuantity}");
-    private void LogTransaction() => Console.WriteLine("Transaction logged.");
+    public double GetInventoryValue() { return Price * StockQuantity; }
 }
-    
-    
+
+class Program
+{
+    static BankAccount b1 = new BankAccount(1163, "karim", 120);
+    static BankAccount b2 = new BankAccount(15203, "Ali", 63);
+    static Student s1 = new Student { Name = "Ali", Address = "Muscat", Grade = 65 };
+    static Student s2 = new Student { Name = "Ahmed", Address = "Muscat", Grade = 70 };
+    static Product p1 = new Product { ProductName = "Wireless Mouse", Price = 5.500, StockQuantity = 50 };
+    static Product p2 = new Product { ProductName = "Mechanical Keyboard", Price = 15.750, StockQuantity = 20 };
+
     static void Main(string[] args)
     {
-        static BankAccount b1 = new BankAccount(1163, "karim", 120);
-        static BankAccount b2 = new BankAccount(15203, "Ali", 63);
+        bool running = true;
+        while (running)
+        {
+            Console.WriteLine("\n--- Menu (1-5, 20 to Exit) ---");
+            string choice = Console.ReadLine();
 
-        
-        
-        
+            switch (choice)
+            { 
+                
+                case "1":
+                    PickAccount().CheckBalance();
+                    break;
+                
+                case "2": 
+                    Student s = PickStudent();
+                    Console.Write("Enter new address: ");
+                    s.Address = Console.ReadLine();
+                    break;
+                
+                case "3": 
+                    BankAccount b = PickAccount();
+                    Console.Write("Amount: ");
+                    b.Deposit(double.Parse(Console.ReadLine()));
+                    break;
+                
+                case "4": 
+                    BankAccount bW = PickAccount();
+                    Console.Write("Amount: ");
+                    bW.Withdraw(double.Parse(Console.ReadLine()));
+                    break;
+                
+                case "5": 
+                    Console.WriteLine("Total Value: " + PickProduct().GetInventoryValue());
+                    break;
+                
+                case "20": running = false; 
+                    break;
+            }
         }
-        
-
     }
+    
+    static BankAccount PickAccount() { Console.Write("Pick (1: Karim, 2: Ali): "); return (Console.ReadLine() == "1") ? b1 : b2; }
+    static Student PickStudent() { Console.Write("Pick (1: Ali, 2: Ahmed): "); return (Console.ReadLine() == "1") ? s1 : s2; }
+    static Product PickProduct() { Console.Write("Pick (1: Mouse, 2: Keyboard): "); return (Console.ReadLine() == "1") ? p1 : p2; }
+}
