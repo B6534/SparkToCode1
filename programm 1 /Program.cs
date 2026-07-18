@@ -38,7 +38,13 @@ class Product {
         PrintDetails(); 
         return Price * StockQuantity; 
     }
-    private void PrintDetails() => Console.WriteLine($"{ProductName}, Price: {Price}, Stock: {StockQuantity}");
+    private void PrintDetails()
+        => Console.WriteLine($"{ProductName}, Price: {Price}, Stock: {StockQuantity}");
+    public void Restock(int quantity) 
+    { 
+        StockQuantity += quantity; 
+        LogTransaction();
+    }
 }
 
 class Program
@@ -103,6 +109,42 @@ class Program
                         Console.WriteLine($"{b2.HolderName} has more money: {b2.Balance}");
                     else
                         Console.WriteLine("Both accounts have an equal balance.");
+                    break;
+                
+                case "8": 
+                    Product p = PickProduct();
+                    Console.Write("Enter quantity to restock: ");
+    
+                    // Use TryParse to prevent crashes on bad input
+                    if (int.TryParse(Console.ReadLine(), out int qty)) {
+                        p.Restock(qty);
+                        
+                        if (p.StockQuantity < 10)
+                            Console.WriteLine("Status: Low");
+                        else if (p.StockQuantity < 50)
+                            Console.WriteLine("Status: Moderate");
+                        else
+                            Console.WriteLine("Status: Well Stocked");
+                    } else {
+                        Console.WriteLine("Invalid input! Please enter a numeric quantity.");
+                    }
+                    break;
+                
+                case "9": 
+                    Console.WriteLine("Source Account:");
+                    BankAccount source = PickAccount();
+                    Console.WriteLine("Destination Account:");
+                    BankAccount dest = PickAccount();
+                    Console.Write("Amount to transfer: ");
+                    double transferAmt = double.Parse(Console.ReadLine());
+                    
+                    if (source.Balance >= transferAmt) {
+                        source.Withdraw(transferAmt);
+                        dest.Deposit(transferAmt);
+                        Console.WriteLine("Transfer successful!");
+                    } else {
+                        Console.WriteLine("Transfer failed: Insufficient funds in source account.");
+                    }
                     break;
                 
                 case "20": running = false; 
