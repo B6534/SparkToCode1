@@ -86,6 +86,24 @@ class Program
                 case "5": 
                     Console.WriteLine("Total Value: " + PickProduct().GetInventoryValue());
                     break;
+                // Register  Student
+                case "6":
+                    Student regStudent = PickStudent();
+                    Console.Write("Enter email: ");
+                    string email = Console.ReadLine();
+                    regStudent.Register(email);
+                    Console.WriteLine("Student registered successfully.");
+                    break;
+                
+                // Compare Account Balances
+                case "7":
+                    if (b1.Balance > b2.Balance)
+                        Console.WriteLine($"{b1.HolderName} has more money: {b1.Balance}");
+                    else if (b2.Balance > b1.Balance)
+                        Console.WriteLine($"{b2.HolderName} has more money: {b2.Balance}");
+                    else
+                        Console.WriteLine("Both accounts have an equal balance.");
+                    break;
                 
                 case "20": running = false; 
                     break;
