@@ -53,7 +53,7 @@ class Program
         {
             Console.WriteLine("YOU pass ");
         }
-////////////////////////////////////////////////////////////////////12
+///////////////////////////allll////////////////////////////////////////12
 /// 
         Console.WriteLine("Welcome to main menu:");
         Console.WriteLine("1.Deposited");
