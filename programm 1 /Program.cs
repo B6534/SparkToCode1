@@ -69,7 +69,8 @@ class Program
                 Console.WriteLine("deposited");
                 break;
             case 2:
-                Console.WriteLine("withdraw");
+                Consolf.WriteLine("withdraw");
+                erhgaoeihfgjoae
                 break;
             case 3:
                 Console.WriteLine("divided");
