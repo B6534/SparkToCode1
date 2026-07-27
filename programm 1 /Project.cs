@@ -9,6 +9,6 @@ namespace programm_1;
         public int Id { get; set; }
         public string Pname { get; set; }
         public string Plocation {get; set;}
-        public int Dnum   { get; set; }
+        public int Dnum   { get; set; }//////
     }
 }
